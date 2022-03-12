@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+import '../styles/home.css';
+import '../styles/prism-one-dark.css';
+
+import Navbar from '../components/Navbar.astro';
+
+const { content } = Astro.props;
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{content.title} | LCSRC</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<style>
+		article {
+			padding-top: 2em;
+			line-height: 1.5;
+			margin-top: 2em;
+			display: flex;
+			flex-direction: column;
+			max-width: 70ch;
+			gap: 1em;
+		}
+
+		.banner {
+			text-align: center;
+			font-size: 1.2rem;
+			background: var(--color-light);
+			padding: 1em 1.5em;
+			padding-left: 0.75em;
+			border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<Navbar active="Ventures" />
+	<main>
+		<header>
+			<div>
+				<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+				<h1>{content.title}</h1>
+			</div>
+		</header>
+		<article>
+			<div class="banner" style="margin-bottom: 2rem">
+				<p>{content.description}</p>
+			</div>
+			<slot />
+		</article>
+	</main>
+</body>
+</html>

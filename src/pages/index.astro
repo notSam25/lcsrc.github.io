@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import '../styles/home.css';
+
+import Navbar from '../components/Navbar.astro';
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>LCSRC</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+	<style>
+		header {
+			gap: 1em;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			line-break: strict;
+			line-height: 1.5rem;
+			max-width: 70ch;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<Navbar />
+	<main>
+		<header>
+			<div>
+				<img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+				<h1>Welcome to LCSRC!</h1>
+			</div>
+		</header>
+		<article>
+			<p>
+				The Ladue Community Stem and Robotics Club is a nonprofit organization dedicated to bringing STEM opportunities
+				with an emphasis on robotics to school communities in the St. Louis region through hands-on experiences, funding,
+				and mentoring.
+			</p>
+		</article>
+	</main>
+</body>
+</html>

@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+const activeElement = Astro.props.active;
+const elements = [
+    {
+        name: "Home",
+        path: "/",
+        dropdowns: []   
+    },
+    {
+        name: "Ventures",
+        path: "ventures",
+        dropdowns: [
+            "FIRST Team",
+            "Robotics Summer Camps",
+            "FLL Coaches Training",
+            "FLL State Championship"
+        ]
+    }
+];
+---
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: var(--color-light);
+        border-radius: 0.3rem;
+    }
+
+    li {
+        float: left;
+        display: block;
+        padding: 1rem;
+    }
+
+    li .active {
+        background-color: inherit;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--color-light);
+        min-width: 160px;
+        box-shadow: 0rem 0rem 0.3rem rgba(0, 0, 0, 0.2);
+        border-radius: 0.1rem;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        border-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+	}
+
+    .dropdown:hover .dropdown-item {
+        display: block;
+        padding: 1rem;
+    }
+</style>
+
+<nav style="margin-bottom: 4em; border-radius: 1rem;">
+    <ul>
+        {elements.map(element => (
+            <a href={element.dropdowns.length == 0 ? element.path : ""}><li class={element.dropdowns.length > 0 ? "dropdown" : ""} href={element.dropdowns.length > 0 ? "#" : element.path} >{element.name}<div class="dropdown-content">{
+                element.dropdowns.map(
+                    dropdown => (
+                        <a class="dropdown-item" href={"/" + element.path + "/" + dropdown.toLowerCase().replace(/ /g, "-")}>{dropdown}</a>
+                    )
+                )}</div>
+            </li></a>
+        ))}
+    </ul>
+</nav>
