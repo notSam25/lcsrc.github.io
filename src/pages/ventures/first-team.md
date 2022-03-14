@@ -1,6 +1,6 @@
 ---
 title: FIRST Team
-description: **Summary**: Following the Summer Robotics Camps, Rohan Suri, Aditya Jain, and Alison Nieder formed a FIRST Lego League team, which competed in at the Missouri Regional Qualifying event and won the Innovation Project Award for designing a new type of cargo container to improve shipping efficiency.
+description: Following the Summer Robotics Camps, Rohan Suri, Aditya Jain, and Alison Nieder formed a FIRST Lego League team, which competed in at the Missouri Regional Qualifying event and won the Innovation Project Award for designing a new type of cargo container to improve shipping efficiency.
 layout: '../../layouts/VentureLayout.astro'
 ---
 ---
